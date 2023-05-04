@@ -8,7 +8,7 @@ public  class TestDemoJS {
     public static void init(Context context) {
         if (null != context) {
             appContext = context;
-            Log.i("SDK初始化","SDK初始化成功");
+            Log.i("SDK初始化","SDK初始化成功22222");
         }
     }
 }
