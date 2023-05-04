@@ -1,0 +1,7 @@
+<resources>
+    <style name="PracticeModeAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_out</item>
+    </style>
+
+</resources>
