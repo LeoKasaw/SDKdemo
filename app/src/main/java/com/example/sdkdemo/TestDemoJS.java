@@ -1,4 +1,4 @@
-package com.example.mylibrary;
+package com.example.sdkdemo;
 
 import android.content.Context;
 import android.util.Log;
