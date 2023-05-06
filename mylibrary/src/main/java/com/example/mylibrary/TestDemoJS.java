@@ -24,7 +24,7 @@ public  class TestDemoJS {
     public  static void setInitListener(InitListener initListener){
         initListeners=initListener;
     }
-    public  void setColorStr(String colorStr){
+    public static void setColorStr(String colorStr){
         colorStrs=colorStr;
     }
     public static String  getColorStr(){
