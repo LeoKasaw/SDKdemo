@@ -36,8 +36,8 @@ public class MainLibActivity extends AppCompatActivity {
                             @Override
                             public void onBuildChildView(IDialog dialog, View view, int layoutRes) {
                                 TextView tv_close=view.findViewById(R.id.tv_close);
-                                Log.i("SDK初始化",TestDemoJS.colorStr+"==="+TestDemoJS.getColorStr());
-                                tv_close.setBackgroundColor(Color.parseColor(TestDemoJS.colorStr));
+                                Log.i("SDK初始化",TestDemoJS.colorStrs+"==="+TestDemoJS.getColorStr());
+                                tv_close.setBackgroundColor(Color.parseColor(TestDemoJS.colorStrs));
                                 tv_close.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {

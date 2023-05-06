@@ -4,32 +4,33 @@ import android.content.Context;
 import android.util.Log;
 
 public  class TestDemoJS {
-    Context  appContext;
-    InitListener initListener;
-   static String colorStr="#000000";
+    static Context  appContext;
+    static InitListener initListeners;
+   static String colorStrs="#000000";
 
-    public  void init(Context context,String appId) {
+    public static void init(Context context,String appId,InitListener initListener) {
         if (null != context) {
             appContext = context;
+            initListeners = initListener;
             Log.i("SDK初始化","SDK初始化成功");
             if(appId.equals("1852009")){
-                initListener.sucessCallback();
+                initListeners.sucessCallback();
             }else {
                 Log.i("SDK初始化","SDK初始化失败，AppId错误");
-                initListener.failCallback(100024);
+                initListeners.failCallback(100024);
             }
         }
     }
-    public   void setInitListener(InitListener initListener){
-        this.initListener=initListener;
+    public  static void setInitListener(InitListener initListener){
+        initListeners=initListener;
     }
     public  void setColorStr(String colorStr){
-        this.colorStr=colorStr;
+        colorStrs=colorStr;
     }
     public static String  getColorStr(){
-        return colorStr;
+        return colorStrs;
     }
-    interface InitListener{
+   public interface InitListener{
         void  sucessCallback();
         void  failCallback(int code);
     }
