@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+    <EditText
+        android:id="@+id/cloud_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:hint="账号" />
+
+    <EditText
+        android:id="@+id/cloud_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:hint="密码"
+        android:imeOptions="flagNoExtractUi"
+        android:inputType="textPassword"
+        android:maxLength="512" />
+
+    <TextView
+        android:id="@+id/cloud_status"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:maxLength="512" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:maxLength="512"
+        android:text="登录" />
+
+</LinearLayout>

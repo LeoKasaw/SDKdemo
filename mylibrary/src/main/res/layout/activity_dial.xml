@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/et_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:minWidth="200dp"
+        android:hint="输入账号"/>
+    <Button
+        android:id="@+id/btn_phone_ui_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_number"
+        android:layout_centerInParent="true"
+        android:text="通话UI设置"/>
+
+    <Button
+        android:id="@+id/btn_dial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_phone_ui_setting"
+        android:layout_centerInParent="true"
+        android:text="拨打"/>
+</RelativeLayout>

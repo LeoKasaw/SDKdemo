@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:paddingTop="10dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/cloud_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:digits="0123456789.*"
+        android:hint="账号"
+        android:maxLength="13"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/cloud_password"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:maxLength="512"
+        android:layout_marginTop="20dp"
+        android:hint="密码"
+        android:imeOptions="flagNoExtractUi"
+        android:inputType="textPassword"/>
+
+    <TextView
+        android:id="@+id/cloud_status"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:maxLength="512"
+        android:layout_marginTop="20dp" />
+    <Button
+        android:id="@+id/login"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:maxLength="512"
+        android:text="登录"
+        android:layout_marginTop="20dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/my_info"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp" />
+    </ScrollView>
+
+</LinearLayout>

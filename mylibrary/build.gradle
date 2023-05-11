@@ -1,15 +1,25 @@
 plugins {
     id 'com.android.library'
+    id 'com.kezong.fat-aar'
+}
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
 }
 
+def releaseVersion() {
+    return  "1.0.0-"
+}
 android {
     namespace 'com.example.mylibrary'
     compileSdk 33
-
+    ndkVersion '20.1.5948944'
     defaultConfig {
         minSdk 24
         targetSdk 33
-
+        ndk {
+            abiFilters 'armeabi-v7a','arm64-v8a'
+        }
+        versionName "android-sdk-" +releaseVersion()+releaseTime()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -24,15 +34,35 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    //配置打包名称
+    libraryVariants.all{ variant->
+        variant.outputs.all{
+            def filename="${defaultConfig.versionName}.aar"
+            outputFileName=filename
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs','../mylibrary/libs/aar'
+        }
+    }
 }
 
 dependencies {
-
+    compileOnly fileTree(dir: 'libs/jar', include: ['*.jar'])
+    compileOnly  fileTree(dir: 'libs/aar', include: ['*.aar'])
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.4.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //导入一个dialogfragment封装的dialog
     implementation 'com.ninetripods:lib-dialog:1.1.0'
+    implementation 'com.github.open-android:pinyin4j:2.5.0'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "com.github.Raizlabs.DBFlow:dbflow-core:4.2.4"
+    implementation "com.github.Raizlabs.DBFlow:dbflow:4.2.4"
+    implementation('com.alibaba:arouter-api:1.5.0') {
+        exclude group: 'com.android.support'
+    }
 }

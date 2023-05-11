@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--右侧是开关的Item-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <TextView
+        android:id="@+id/settings_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        tools:text="显示帧率、分辨率"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/settings_item_switch"
+        android:layout_width="48dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

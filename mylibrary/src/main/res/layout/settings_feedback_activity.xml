@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.yealink.base.view.DropEditText
+        android:id="@+id/question_type_value"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:editable="false"
+        android:hint="反馈设置"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14sp"
+        />
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_below="@id/question_type_value"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@id/question_type_value"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="20dp"
+            android:text="反馈描述"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:background="@color/white"
+            android:gravity="left|top"
+            android:hint="设置输入"
+            android:maxLength="300"
+            android:paddingLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center_vertical|right"
+            android:paddingRight="20dp"
+            android:text="0/300"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/contact"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_below="@+id/picture"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical|left"
+            android:text="反馈内容"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <com.yealink.base.view.ClearEditText
+            android:id="@+id/settings_feedback_contacts_value"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:gravity="center_vertical|left"
+            android:hint="联系隐藏"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/log_container"
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@+id/contact"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:text="自动上传" />
+
+        <Switch
+            android:id="@+id/sc_auto_upload_log"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:checked="true" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_upload_tips"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:layout_below="@+id/log_container"
+        android:text="通知" />
+
+        <Button
+            android:id="@+id/btnCommit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提交"/>
+        <TextView
+            android:id="@+id/tvProgress"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/ll_inner_feedback"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_upload_tips"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/cb_inner_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:clickable="false"
+            android:text="反馈类型"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="提问"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_help_center"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="设置帮助中心" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:id="@+id/tv_telephone_service"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:text="客服"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:id="@+id/tv_official_website"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="浏览器"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

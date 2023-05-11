@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:paddingTop="20dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/cloud_server"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:maxLength="512"
+        android:layout_marginTop="20dp"
+        android:hint="服务器地址"
+        android:imeOptions="flagNoExtractUi"
+        android:inputType="text"/>
+    <Button
+        android:id="@+id/tv_query_server"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:maxLength="512"
+        android:text="查询租户信息"
+        android:layout_marginTop="20dp" />
+</LinearLayout>

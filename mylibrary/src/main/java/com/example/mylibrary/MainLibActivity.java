@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,8 +35,8 @@ public class MainLibActivity extends AppCompatActivity {
                             @Override
                             public void onBuildChildView(IDialog dialog, View view, int layoutRes) {
                                 TextView tv_close=view.findViewById(R.id.tv_close);
-                                Log.i("SDK初始化",TestDemoJS.colorStrs+"==="+TestDemoJS.getColorStr());
-                                tv_close.setBackgroundColor(Color.parseColor(TestDemoJS.colorStrs));
+                                Log.i("SDK初始化", YSTServiceSdk.colorStrs+"==="+ YSTServiceSdk.getColorStr());
+                                tv_close.setBackgroundColor(Color.parseColor(YSTServiceSdk.colorStrs));
                                 tv_close.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {

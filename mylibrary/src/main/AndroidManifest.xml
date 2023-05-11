@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+        <application android:allowBackup="true"
+            android:supportsRtl="true" >
+                <receiver android:name="com.yealink.third.push.YLVivoReceiver" android:exported="true">
+                        <intent-filter>
+                                <!-- 接收push消息 -->
+                                <action android:name="com.vivo.pushclient.action.RECEIVE" />
+                        </intent-filter>
+                </receiver>
+                <service
+                    android:name="com.yealink.third.push.YLOppoServiceV1"
+                    android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE"
+                    android:exported="true">
+                        <intent-filter>
+                                <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE" />
+                        </intent-filter>
+                </service>
+                <!-- 兼容Q以下版本 -->
+                <service
+                    android:name="com.yealink.third.push.YLOppoServiceV2"
+                    android:permission="com.heytap.mcs.permission.SEND_PUSH_MESSAGE"
+                    android:exported="true">
+                        <intent-filter>
+                                <action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE" />
+                                <action android:name="com.heytap.msp.push.RECEIVE_MCS_MESSAGE" />
+                        </intent-filter>
+                </service>
+        </application>
 </manifest>

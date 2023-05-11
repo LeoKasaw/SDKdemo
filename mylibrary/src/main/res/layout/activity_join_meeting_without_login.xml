@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:digits="0123456789.*@"
+        android:hint="号码"
+        android:maxLength="13"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:digits="0123456789.*@"
+        android:hint="密码"
+        android:maxLength="13"
+        android:inputType="number"/>
+    <EditText
+        android:id="@+id/et_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:hint="昵称（可为空，默认设备型号）" />
+    <EditText
+        android:id="@+id/et_server"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:hint="服务器地址" />
+
+    <Button
+        android:id="@+id/meeting_setting"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:text="会议设置"
+        android:layout_height="40dp"/>
+    <Button
+        android:id="@+id/join_meeting"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:text="加入会议"
+        android:layout_height="40dp"/>
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--可编辑的item-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="40dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:clickable="true">
+    <TextView
+        android:id="@+id/settings_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        tools:text="Name"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <com.yealink.base.view.ClearEditText
+        android:id="@+id/settings_item_editor"
+        android:layout_toRightOf="@+id/settings_item_name"
+        android:layout_toLeftOf="@+id/btnOk"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_vertical|right"
+        tools:hint="Html服务器地址"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="确认" />
+
+</RelativeLayout>
