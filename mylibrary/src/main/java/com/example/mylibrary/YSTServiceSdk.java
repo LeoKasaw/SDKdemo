@@ -7,6 +7,9 @@ import android.util.Log;
 import com.example.mylibrary.utils.LogUtils;
 import com.example.mylibrary.yealin.meeting.MyMeetingUi;
 import com.example.mylibrary.yealin.phone.MyPhoneUI;
+import com.yealink.base.utils.SharedPreferencesHelper;
+import com.yealink.sdk.api.YealinkSdk;
+import com.yealink.sdk.base.SdkInitListener;
 
 public  class YSTServiceSdk {
     static Context  appContext;
@@ -52,26 +55,26 @@ public  class YSTServiceSdk {
         if (null != appContext) {
             LogUtils.i("SDK初始化成功");
                 //进行第三方SDK的初始化
-//                YealinkSdk.initSdk(application,appSecret, // 全局上下文
-//                        appId, // appSecret
-//                        new SdkInitListener() { // 初始化结果监听
-//                            @Override
-//                            public void onSuccess() {
-////                            // SDK初始化成功
-////                                YealinkSdk.getAccountService().setDispatcherHost("192.168.1.151");
-////                                SharedPreferencesHelper.getInstance().putBoolean("KEY_SHOW_TOAST", false);
-////                                YealinkSdk.getSettingService().setShowToast(false);
-////                                YealinkSdk.getSettingService().setShareMoveTaskToBack(false);
-////                                YealinkSdk.getMeetingService().getMeetingUIController().setMeetingUIProxy(new MyMeetingUi());
-////                                YealinkSdk.getPhoneService().getPhoneController().setPhoneUIProxy(new MyPhoneUI());
-////                                yealinkSdkInitListener.onSuccess();
-//                            }
-//                            @Override
-//                            public void onFailure() {
-//                            // SDK初始化失败
-////                                yealinkSdkInitListener.onFailure();
-//                            }
-//                        });
+                YealinkSdk.initSdk(application,appSecret, // 全局上下文
+                        appId, // appSecret
+                        new SdkInitListener() { // 初始化结果监听
+                            @Override
+                            public void onSuccess() {
+//                            // SDK初始化成功
+                                YealinkSdk.getAccountService().setDispatcherHost("192.168.1.151");
+                                SharedPreferencesHelper.getInstance().putBoolean("KEY_SHOW_TOAST", false);
+                                YealinkSdk.getSettingService().setShowToast(false);
+                                YealinkSdk.getSettingService().setShareMoveTaskToBack(false);
+                                YealinkSdk.getMeetingService().getMeetingUIController().setMeetingUIProxy(new MyMeetingUi());
+                                YealinkSdk.getPhoneService().getPhoneController().setPhoneUIProxy(new MyPhoneUI());
+                                yealinkSdkInitListener.onSuccess();
+                            }
+                            @Override
+                            public void onFailure() {
+                            // SDK初始化失败
+//                                yealinkSdkInitListener.onFailure();
+                            }
+                        });
         }
     }
     public  static void setInitListener(InitListener initListener){
